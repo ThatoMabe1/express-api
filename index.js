@@ -32,8 +32,13 @@ app.get('/api/greet', function (req, res) {
 
 app.post('/api/greet', function (req, res) {
 
-  const username = req.body.username;
-  const language = req.body.greeting;
+  const language = req.body.language;
+  const greeting = req.body.greeting;
+
+  console.log(req.body);
+  console.log(greetings)
+
+  greetings[language] = greeting
 
   res.json({
     status: 'success',
