@@ -16,7 +16,8 @@ app.get('/api/greet', function (req, res) {
 
   const username = req.query.username;
   const language = req.query.language;
-
+  console.log(greetings)
+  console.log(req.query)
   if (!greetings[language]) {
     return res.json({
       error: 'Invalid language'
