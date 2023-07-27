@@ -27,6 +27,7 @@
         axios
             .get(`/api/greet?username=${this.username}&language=${this.language}`)
             .then(result => {
+                console.log(result.data)
                 if (result.data.error) {
                     this.greeting = result.data.error
                 } else {
@@ -36,7 +37,7 @@
     }
     }">
 
-
+    <div x-text="language"></div>
         <div x-text="greeting">
 
         </div>
@@ -57,7 +58,7 @@
     <div>
         <h2>Add language</h2>
         <div>
-            Language: <input type="text" x-model
+            Language: <input type="text">
         </div>
     </div>
 

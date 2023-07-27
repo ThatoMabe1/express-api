@@ -5,17 +5,6 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-app.get('/', function (req, res) {
-  res.send('Hello from my API');
-});
-
-app.get('/api/greet', function (req, res) {
-  console.log(req.query);
-  const username = req.query.username;
-  res.json({
-    message: `Hello, ${username}!`
-  })
-});
 
 app.use(express.json())
 
@@ -40,7 +29,7 @@ app.get('/api/greet', function (req, res) {
   })
 });
 
-app.get('/api/greet', function (req, res) {
+app.post('/api/greet', function (req, res) {
 
   const username = req.body.username;
   const language = req.body.greeting;
